@@ -31,6 +31,8 @@ def create_app(test_config=None):
   !! Running this funciton will add one
   '''
   #db_drop_and_create_all()
+  
+  
   @app.route('/', methods=['GET'])
   def init():
     return jsonify({
