@@ -59,4 +59,4 @@ python-dotenv
 psycopg2-binary
 python-jose
 flask_wtf
-libpython3.9-dev
+PyGObject
