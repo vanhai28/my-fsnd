@@ -61,4 +61,3 @@ python-dotenv
 psycopg2-binary
 python-jose
 flask_wtf
-libgirepository1.0-dev
