@@ -1,4 +1,6 @@
 attrs==19.3.0
+Flask
+gunicorn
 Automat==0.8.0
 awscli==1.25.53
 blinker==1.4
