@@ -28,3 +28,5 @@ zipp==3.6.0
 python-dotenv
 flask_wtf
 python-dateutil==2.8.2
+babel
+cryptography
