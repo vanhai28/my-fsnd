@@ -28,6 +28,10 @@ install libraries
 pip install -r requirements.txt
 ```
 From within the `./src` directory first ensure you are working using your created virtual environment.
+Notify that remove comment this line in app.py in IN THE FIRST TIME run locall to build database 
+```bash
+ #db_drop_and_create_all()
+ ```
 
 To run the server, execute:
 

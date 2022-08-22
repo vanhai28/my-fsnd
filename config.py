@@ -18,5 +18,6 @@ DB_USER = os.getenv('DB_USER', 'postgres')
 DB_PASSWORD = os.getenv('DB_PASSWORD', '123')
 DB_NAME = os.getenv('DB_NAME', 'postgres')
 
-# SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}/{}'.format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
-SQLALCHEMY_DATABASE_URI = 'postgresql://tzvhprqssljaak:34017426811808f9de691180a916ab2fcde38f4cdc533029aba6bc95260e1c6c@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d6kuteh2815ltv'
+SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}/{}'.format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
+# Use this URI in case testing DB on heroku
+# SQLALCHEMY_DATABASE_URI = 'postgresql://tzvhprqssljaak:34017426811808f9de691180a916ab2fcde38f4cdc533029aba6bc95260e1c6c@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d6kuteh2815ltv'
