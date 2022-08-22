@@ -10,7 +10,7 @@ colorama==0.4.4
 configobj==5.0.6
 constantly==15.1.0
 cryptography==2.8
-dbus-python==1.2.16
+# dbus-python==1.2.16
 distlib==0.3.4
 distro==1.4.0
 distro-info
