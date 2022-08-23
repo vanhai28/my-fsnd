@@ -50,7 +50,6 @@ def create_app(test_config=None):
 
   @app.route('/api/movies', methods=['GET'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("get:all-movie")
   def getMovies(self):
       try:
@@ -73,7 +72,6 @@ def create_app(test_config=None):
 
   @app.route('/api/movies/<id>', methods=['GET'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("get:movie")
   def getMoviesDetail(self,id):
   #def getMoviesDetail(id):
@@ -90,7 +88,6 @@ def create_app(test_config=None):
 
   @app.route('/api/movies', methods=['POST'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("add:movie")
   def create_movies(self):
     movieForm = MovieForm()
@@ -112,7 +109,6 @@ def create_app(test_config=None):
 
   @app.route('/api/movies/<id>', methods=['PUT'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("edit:movie")
   def edit_movies(self, id:int):
   #def edit_movies(id:int):
@@ -134,7 +130,6 @@ def create_app(test_config=None):
     })
   @app.route('/api/movies/<id>', methods=['DELETE'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("delete:movie")
   def delete_movies(self,id):
   #def delete_movies(id):
@@ -153,7 +148,6 @@ def create_app(test_config=None):
 
   @app.route('/api/actors', methods=['GET'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("get:all-actor")
   def getActors(self):
       try:
@@ -176,7 +170,6 @@ def create_app(test_config=None):
 
   @app.route('/api/actors/<id>', methods=['GET'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("get:actor")
   def getActorsDetail(self,id):
   #def getActorsDetail(id):
@@ -190,7 +183,6 @@ def create_app(test_config=None):
 
   @app.route('/api/actors', methods=['POST'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("add:actor")
   def create_actors(self):
     actorForm = ActorForm(request.form)
@@ -213,7 +205,6 @@ def create_app(test_config=None):
 
   @app.route('/api/actors/<id>', methods=['PUT'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("edit:actor")
   def edit_actors(self,id):
   #def edit_actors(id):
@@ -235,7 +226,6 @@ def create_app(test_config=None):
 
   @app.route('/api/actors/<id>', methods=['DELETE'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("delete:actor")
   def delete_actors(self, id:int):
   #def delete_actors(id:int):
@@ -251,9 +241,8 @@ def create_app(test_config=None):
         'success':True
     })
 
-  @app.route('/api/movies/add/actor', methods=['PATCH'])
+  @app.route('/api/movies/actors', methods=['POST'])
   @cross_origin()
-  # Comment bellow line when run unit test
   @requires_auth("add:actor-to-movie")
   def add_actors_to_movie(self):
     form = MovieActorForm(request.form)
@@ -277,22 +266,50 @@ def create_app(test_config=None):
 
   # Error Handling
   '''
-  Example error handling for unprocessable entity
+  error handling for unprocessable entity
   '''
-
-
   @app.errorhandler(422)
-  def unprocessable(error):
+  def handle_unprocessable(error):
       return jsonify({
           "success": False,
           "error": 422,
           "message": "unprocessable"
       }), 422
 
+  '''
+  error handling for Unauthorized 
+  '''
+  @app.errorhandler(401)
+  def hanle_Unauthorized (error):
+      return jsonify({
+          "success": False,
+          "error": 401,
+          "message": "Unauthorized !"
+      }), 401
+  '''
+  error handling for bad request
+  '''
+  @app.errorhandler(400)
+  def handle_badRequest(error):
+      return jsonify({
+          "success": False,
+          "error": 400,
+          "message": "Bad request!"
+      }), 400
+  '''
+  error handling for server error
+  '''
+  @app.errorhandler(500)
+  def handle_badRequest(error):
+      return jsonify({
+          "success": False,
+          "error": 500,
+          "message": "Something went wrong!"
+      }), 500
+
 
   '''
-  @TODO implement error handler for 404
-      error handler should conform to general task above
+  @ implement error handler for 404
   '''
   @app.errorhandler(404)
   def handle_not_found_error(e):
@@ -303,8 +320,7 @@ def create_app(test_config=None):
                   }), 404
   app.register_error_handler(404, handle_not_found_error)
   '''
-  @TODO implement error handler for AuthError
-      error handler should conform to general task above
+  @ implement error handler for AuthError
   '''
   @app.errorhandler(AuthError)
   def handle_auth_error(ex):
