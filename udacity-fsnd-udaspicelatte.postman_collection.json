@@ -384,7 +384,7 @@
 					"response": []
 				},
 				{
-					"name": "movies/add/actor",
+					"name": "movies/actors",
 					"event": [
 						{
 							"listen": "test",
@@ -519,7 +519,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJ5cWlIZUFpSGFqRHh6Y3ZxQllKZyJ9.eyJpc3MiOiJodHRwczovL2Rldi04MmZwZG0zeS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTc3MDM4NzQ0NDAzNjA5ODM5NzIiLCJhdWQiOiJodHRwczovY2FzdGluZy9hcGkiLCJpYXQiOjE2NjExNzIyMDIsImV4cCI6MTY2MTI1ODYwMiwiYXpwIjoicWFLUTFJOU04dFg2N0RnMVlndTdZTXZvak52VmJ1RHAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvciIsImdldDphbGwtYWN0b3IiLCJnZXQ6YWxsLW1vdmllIiwiZ2V0Om1vdmllIl19.twU4kB2hS8hs0amb3ACXlpVrY0wyKinOLy1ZOnesk6sf-55xSvYriZepSoT3Ybx7qOJasXJ19l-IcCIRQq6_9lr2GbbEp7rNs6bjru8_rUMbu5Ryt0G6Pcgc65clqiqteb-rZ2vzU8Q9Kjxb3I4hu9R4iAdcjQ-tbeYmiqsrQV8rSVF3pdQ1LjDDPtmVVQ8N-ZwudUfcKi3Tm6G1cI1V42b6ESLzv_jRsVqnFblP14SzeshpakY7GyXSdKFbZOyPxRET6srPCXHVGxW1CLLmXivW9boVLScwj8TBIxbYdhJfX8e3tKuTsLXwWGDG_i1sKOUGBGo7rHTyFGGy6Bvj3Q",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJ5cWlIZUFpSGFqRHh6Y3ZxQllKZyJ9.eyJpc3MiOiJodHRwczovL2Rldi04MmZwZG0zeS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTc3MDM4NzQ0NDAzNjA5ODM5NzIiLCJhdWQiOiJodHRwczovY2FzdGluZy9hcGkiLCJpYXQiOjE2NjEyNjYzNDUsImV4cCI6MTY2MTM1Mjc0NSwiYXpwIjoicWFLUTFJOU04dFg2N0RnMVlndTdZTXZvak52VmJ1RHAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvciIsImdldDphbGwtYWN0b3IiLCJnZXQ6YWxsLW1vdmllIiwiZ2V0Om1vdmllIl19.HQo8MBHKurGJOcHu_5wLTKw7Bjqj7dAu5cpEbBDp9k-tiKrr43BPOdHqLIPu7bLYkG_DrFtYPlAfraGmAdSU_t32ySXSXOBmk-ROJrClNObO_DkNpho7taxvg30H_lJlz6eSIVIePRVanblz09puBDESNPrggusErNjy4LUVD3vh-SHebyOOrxKoQDOlLg80RcJ6PDMNZV3qJ2UbMQqKjFBWtFuVTWNH9Uo1dHTBnt4495YASwOhvR6Z9wD_gDWrjIv8CffVi-YjJWj8PUblGpv55BpDt1--QX3Y2XJMuX2hHsZ0hfTrXNK0oXlE7G5UFl66JsVvuCqd00sy_6PaIA",
 						"type": "string"
 					}
 				]
@@ -825,13 +825,13 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Anna",
+									"value": "Bob",
 									"contentType": "",
 									"type": "text"
 								},
 								{
 									"key": "age",
-									"value": "20",
+									"value": "22",
 									"type": "text"
 								}
 							]
@@ -905,7 +905,7 @@
 					"response": []
 				},
 				{
-					"name": "movies/add/actor",
+					"name": "movies/actors",
 					"event": [
 						{
 							"listen": "test",
@@ -920,7 +920,7 @@
 						}
 					],
 					"request": {
-						"method": "PATCH",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
@@ -938,21 +938,20 @@
 								},
 								{
 									"key": "movie_id",
-									"value": "10",
+									"value": "1",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{host}}/api/movies/add/actor",
+							"raw": "{{host}}/api/movies/actors",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"movies",
-								"add",
-								"actor"
+								"actors"
 							]
 						}
 					},
@@ -1034,7 +1033,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJ5cWlIZUFpSGFqRHh6Y3ZxQllKZyJ9.eyJpc3MiOiJodHRwczovL2Rldi04MmZwZG0zeS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDkwNTYxNzA4NzA2NzU3Nzc3MjAiLCJhdWQiOiJodHRwczovY2FzdGluZy9hcGkiLCJpYXQiOjE2NjExNzIyNjAsImV4cCI6MTY2MTI1ODY2MCwiYXpwIjoicWFLUTFJOU04dFg2N0RnMVlndTdZTXZvak52VmJ1RHAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImFkZDphY3RvciIsImFkZDphY3Rvci10by1tb3ZpZSIsImFkZDptb3ZpZSIsImRlbGV0ZTphY3RvciIsImVkaXQ6YWN0b3IiLCJlZGl0Om1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFsbC1hY3RvciIsImdldDphbGwtbW92aWUiLCJnZXQ6bW92aWUiXX0.WpXxk5oBA_vT2d19Z0kYilu-4pAIV4hbbcCs_SC3P08O4VpYBMjbZihFRCFbhHrWN7fXcixGJeH-HDz7a-QX35p832eJxIiQY4T7NaPiligvarUlXGEhd6Tp7k5Z3_oDbWjMXLzVVhDXon42dUgfzuQZLN7G-54m1qIsmyRY4WyFWuuTYLrnUzPa3FogRAxYbAqCclcdt_nVC9-MoxoKsCqDkXoo2BPEzGQAf6wcn13FzzASJSTRlQIKPr5bqxOSKv7Pq9y_PoKyBiwPdNdbNcvYN9ssDejZ9bveL3CidKftDkG0n7vUU7YiKeAKERH_Bjoo8OHv5_QnUNTk19znqQ",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJ5cWlIZUFpSGFqRHh6Y3ZxQllKZyJ9.eyJpc3MiOiJodHRwczovL2Rldi04MmZwZG0zeS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDkwNTYxNzA4NzA2NzU3Nzc3MjAiLCJhdWQiOiJodHRwczovY2FzdGluZy9hcGkiLCJpYXQiOjE2NjEyNjY2MTgsImV4cCI6MTY2MTM1MzAxOCwiYXpwIjoicWFLUTFJOU04dFg2N0RnMVlndTdZTXZvak52VmJ1RHAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImFkZDphY3RvciIsImFkZDphY3Rvci10by1tb3ZpZSIsImFkZDptb3ZpZSIsImRlbGV0ZTphY3RvciIsImVkaXQ6YWN0b3IiLCJlZGl0Om1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFsbC1hY3RvciIsImdldDphbGwtbW92aWUiLCJnZXQ6bW92aWUiXX0.opvzGQKxiyc6aMguXdA8kZcNpz-9ApjrGfc1oL-QOrUHPzHMCHbjspimSSKPD1yDjktp6n2D1EQgu0g_8hQYJCjWO22fJV929FYkJzWQ9VWoAL1_Sg46Z6gyxrtDbzLf58GbSUmXW3_xHybJsst6xD8wiHevm_2xiRJOG4ObvnSpGB-wJgUfXrenFZm-WriZrHlFs4Z8LcTqWrQG6SL9TsGTjnQEvMY5Pm7AQggQEZFL51NQK6JykgW7jdypxqTSl7wI5PNs-O8XFb3iu6Mom5whrQE40GKce0cJ5f4BpmhqFllY5RJmVe6_CRFiyvTx3MhGA7GnQr6UGfFZ7X2ThA",
 						"type": "string"
 					}
 				]
@@ -1448,7 +1447,7 @@
 					"response": []
 				},
 				{
-					"name": "movies/add/actor",
+					"name": "movies/actors",
 					"event": [
 						{
 							"listen": "test",
@@ -1463,7 +1462,7 @@
 						}
 					],
 					"request": {
-						"method": "PATCH",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
@@ -1481,21 +1480,20 @@
 								},
 								{
 									"key": "movie_id",
-									"value": "10",
+									"value": "1",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{host}}/api/movies/add/actor",
+							"raw": "{{host}}/api/movies/actors",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"movies",
-								"add",
-								"actor"
+								"actors"
 							]
 						}
 					},
@@ -1520,14 +1518,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/movies/40",
+							"raw": "{{host}}/api/movies/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"movies",
-								"40"
+								"2"
 							]
 						}
 					},
@@ -1577,7 +1575,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJ5cWlIZUFpSGFqRHh6Y3ZxQllKZyJ9.eyJpc3MiOiJodHRwczovL2Rldi04MmZwZG0zeS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDE5ODMzMTI5NTM0MjUxMTE0NTAiLCJhdWQiOiJodHRwczovY2FzdGluZy9hcGkiLCJpYXQiOjE2NjExNzI2NjcsImV4cCI6MTY2MTI1OTA2NywiYXpwIjoicWFLUTFJOU04dFg2N0RnMVlndTdZTXZvak52VmJ1RHAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImFkZDphY3RvciIsImFkZDphY3Rvci10by1tb3ZpZSIsImFkZDptb3ZpZSIsImRlbGV0ZTphY3RvciIsImRlbGV0ZTptb3ZpZSIsImVkaXQ6YWN0b3IiLCJlZGl0Om1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFsbC1hY3RvciIsImdldDphbGwtbW92aWUiLCJnZXQ6bW92aWUiXX0.ECZTO-Anaw7rj2__O3cKN4DP-LF-jQlVPgXqvDwZCjY8cvDcRFInpuah8le2kHQ6kaGHAQ5bAlBuLwtW4msI2YSS2xWNfGK3eieXNn_o3gkF6HDdcNZYSBwo7IkpLcUt_wUPeOsq08Lb_gWG7_Zu34zUCE44-zifBe_63fxP0S7-KgmNQ6Pj0t_rSKDuHp8zqbjRm0FIPV8iW9s53RtumL3lDxTh7uKkwSzlLn3n8kekFvXSSAUQ2J_ipCn0Gfevs0CL0d5iOMGpogDcOR8ZSbgLy5pJ6eZTZMnubHrVfjmGeqxX8duC3ZTF-pT8qFL8eOwAAwe_ZTKHnlpKNKMidQ",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkJ5cWlIZUFpSGFqRHh6Y3ZxQllKZyJ9.eyJpc3MiOiJodHRwczovL2Rldi04MmZwZG0zeS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDE5ODMzMTI5NTM0MjUxMTE0NTAiLCJhdWQiOiJodHRwczovY2FzdGluZy9hcGkiLCJpYXQiOjE2NjEyNjY1NTMsImV4cCI6MTY2MTM1Mjk1MywiYXpwIjoicWFLUTFJOU04dFg2N0RnMVlndTdZTXZvak52VmJ1RHAiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImFkZDphY3RvciIsImFkZDphY3Rvci10by1tb3ZpZSIsImFkZDptb3ZpZSIsImRlbGV0ZTphY3RvciIsImRlbGV0ZTptb3ZpZSIsImVkaXQ6YWN0b3IiLCJlZGl0Om1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFsbC1hY3RvciIsImdldDphbGwtbW92aWUiLCJnZXQ6bW92aWUiXX0.Xi5H6czkqd2_G8Baw1rByj1mJLE0z2Hmx7_wDsV3oWRwqofPS8aX9yrWlOhW5M41RxdeGK_hePXOuyI7lhnnELGcqMmAQ1YefqBa5O8Sqgc0hldpHGNcg-0PLqU2asf7QOKi3gDbiEe-99o3VMBvgozOPoKpjezFka5CgseZuCyG-YRjnID3q8ljYZ1qg0xvY0FsYSVseraVTO8F30VEAyEZ3h6_B-gpMtNzCA-vRWoi8Pnnwm-PvWvMe5eMdxOZBhnc_g5mwAbfwHZvZoPVLdJdQurSDiM-HomMtleia2yNWMX_LWu8EXmrMLn8sRuf00fpHxGBNoLb77LACXEjNw",
 						"type": "string"
 					}
 				]
