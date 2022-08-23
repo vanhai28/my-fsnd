@@ -40,7 +40,7 @@ flask run --reload
 ```
 
 The `--reload` flag will detect file changes and restart the server automatically.
-## HEROKU LINK: https://fsnd-movie.herokuapp.com/
+## HEROKU LINK: https://fsnd-movie-app.herokuapp.com/
 
 ## For role Casting_Assistant
 
